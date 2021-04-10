@@ -19,6 +19,7 @@ while true; do
     DIR=$(dirname "$SRC")
     if [ "$DIR" == "$DOWNLOAD" ]; then
         echo $(date) "INFO " "$3" moved as "$SRC". >>"$LOG"
+        chmod 775 -R "$SRC"
         mv "$SRC" "$COMPLETE" >>"$LOG" 2>&1
         exit $?
     elif [ "$DIR" == "/" -o "$DIR" == "." ]; then
