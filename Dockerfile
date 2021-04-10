@@ -6,9 +6,14 @@ RUN apk update && \
 	apk add --no-cache --update aria2
 
 COPY aria2.conf /app/aria2.conf
+COPY start.sh /app/start.sh
+COPY scripts/* /app/scripts/
 
 
 EXPOSE 6800
 
-ENTRYPOINT ["/usr/bin/aria2c", "--conf-path=/app/aria2.conf"]
+VOLUME ["/downloads"]
+VOLUME ["/completed"]
+
+ENTRYPOINT ["/app/start.sh"]
 
