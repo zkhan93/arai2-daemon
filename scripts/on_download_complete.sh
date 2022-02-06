@@ -5,9 +5,9 @@
 # $2 is the number of files.
 # $3 is the path of the first file.
 
-DOWNLOAD=/downloads # no trailing slash!
-COMPLETE=/completed # no trailing slash!
-LOG=/downloads/aria2.logs
+DOWNLOAD=/downloads/aria2 # no trailing slash!
+COMPLETE=/downloads # no trailing slash!
+LOG=/downloads/aria2/aria2.logs
 SRC=$3
 
 if [ "$2" == "0" ]; then

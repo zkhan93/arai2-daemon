@@ -13,7 +13,6 @@ COPY scripts/* /app/scripts/
 EXPOSE 6800
 
 VOLUME ["/downloads"]
-VOLUME ["/completed"]
 
 ENTRYPOINT ["/app/start.sh"]
 

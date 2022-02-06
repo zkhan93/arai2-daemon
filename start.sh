@@ -5,9 +5,13 @@ if [ $SECRET ]; then
     echo "rpc-secret=${SECRET}" >>/app/aria2.conf
 fi
 
-# create a session file
-touch /downloads/aria2.session
-touch /downloads/aria2.logs
+# create tmp directory
+if [ ! -d /downloads/aria2 ]; then
+    mkdir -p /downloads/aria2
+fi
+# create session file, and log file
+touch /downloads/aria2/aria2.session
+touch /downloads/aria2/aria2.logs
 
 # start the aria2 daemon
 echo "starting aria2 daemon"
